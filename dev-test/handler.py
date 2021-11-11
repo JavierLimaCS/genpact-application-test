@@ -15,7 +15,7 @@ class Handler():
     def __setupEventHandler(self):
         self.event_handler.on_created = self.created
         self.event_handler.on_deleted = self.deleted
-        self.event_handler.on_modified = self.deleted
+        self.event_handler.on_modified = self.modified
         self.event_handler.on_moved = self.moved
 
     def created(self, event):
@@ -23,13 +23,13 @@ class Handler():
 
 
     def deleted(self, event):
-        pass
+        print(f"{event.src_path} has been deleted!")
 
 
     def modified(self, event):
-        pass
+        print(f"{event.src_path} has been modified!")
 
 
     def moved(self, event):
-        pass
+        print(f"{event.src_path} has been moved to {event.dest_path}!")
 

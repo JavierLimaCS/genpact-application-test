@@ -8,8 +8,7 @@ class Main():
       observer.initializeObserver(handler.event_handler)
       
 
-
 if __name__=="__main__":
-   main = Main()
+   Main()
 
 
