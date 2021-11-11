@@ -7,9 +7,7 @@ class Main():
       self.handler = Handler()
       self.observer = ObserverHandler()
       self.observer.initializeObserver(self.handler.event_handler)
-
-   def createDataframeFile(self):
-
+      
 
 if __name__=="__main__":
    #defines where Processed and Not applicable folder are meant to be
