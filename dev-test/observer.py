@@ -4,7 +4,7 @@ import time
 class ObserverHandler():
     def __init__(self) -> None:
         self.observer : Observer = Observer()
-        self.path : str = '.'
+        self.path : str = './data/'
         self.recursive : bool = True
         self.ev = None
 

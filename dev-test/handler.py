@@ -1,8 +1,9 @@
 from watchdog.events import PatternMatchingEventHandler
+import os
 
 class Handler():
     def __init__(self) -> None:
-        self.patterns : list = ['.xlsx']
+        self.patterns : list = ['*']
         self.ignore_patterns : list = None
         self.ignore_directories : bool = True
         self.case_sensitive : bool = True
@@ -19,6 +20,13 @@ class Handler():
         self.event_handler.on_moved = self.moved
 
     def created(self, event):
+        if self.path == '.':
+            files = os.listdir(self.path+'/data')
+        else:
+            files = os.listdir(self.path)
+        for file in files:
+            if file.endswith('.xlsx') or file.endswith('.xls'):  
+                print('.xls founded')
         print(f"{event.src_path} has been created!")
 
 

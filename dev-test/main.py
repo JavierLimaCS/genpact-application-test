@@ -1,14 +1,25 @@
 from handler import Handler
 from observer import ObserverHandler
+import os
 
 class Main():
    def __init__(self):
-      handler = Handler()
-      observer = ObserverHandler()
-      observer.initializeObserver(handler.event_handler)
-      
+      self.handler = Handler()
+      self.observer = ObserverHandler()
+      self.observer.initializeObserver(self.handler.event_handler)
+
+   def createDataframeFile(self):
+
 
 if __name__=="__main__":
+   #defines where Processed and Not applicable folder are meant to be
+   processed_folder = './data/Processed'
+   not_aplicable_folder = './data/Not_applicable'
+
+   #create default folder location
+   os.makedirs(processed_folder, exist_ok=True)
+   os.makedirs(not_aplicable_folder, exist_ok=True)
+      
    Main()
 
 
