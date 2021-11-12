@@ -25,7 +25,6 @@ class Handler():
 
     def created(self, event):
         files = os.listdir(self.path)
-        print(files)
         #-- looping through folder path to find every .xls or .xlsx file
         for file in files:
             if file.endswith('.xlsx') or file.endswith('.xls'):  
@@ -39,9 +38,9 @@ class Handler():
                     self.dataframe.to_excel('master.xlsx')
                 except Exception as e:
                     print(e)
-            #else:
-                #TODO move to Not applicable folder
-                #os.rename(event.src_path, './data/Not_applicable/'+file
+            else:
+                if not os.path.isdir(self.path+file):
+                    os.rename(self.path+file, self.path+'Not_applicable/'+file)
 
 
     def deleted(self, event):
@@ -49,7 +48,14 @@ class Handler():
 
 
     def modified(self, event):
-        print(f"{event.src_path} has been modified!")
+        files = os.listdir(self.path)
+        for file in files:
+            if file.endswith('.xlsx') or file.endswith('.xls'):
+                try:
+                    os.rename(self.path+file, self.path+'Processed/'+file)
+                    print(f"{event.src_path} has been processed successfully!")
+                except:
+                    print(f"{event.src_path} has already been processed!")
 
 
     def moved(self, event):
