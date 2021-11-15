@@ -47,7 +47,7 @@ $ pip install 'packagename'
 - Home-page: https://www.riverbankcomputing.com/software/pyqt/
 
 ## Classes
-- WorkerThread : class that allows the watcher to run within the UI.
-- Main : class defined for setup app's UI. 
-- ObserverHandler : class defined for an watchdog observer object for constantly 'watchiing' the indicated folder.
-- Handler : class defined for events handling of the files in the folder indicated.
+- **WorkerThread** : class that allows the watcher to run within the UI.
+- **Main** : class defined for setup app's UI. 
+- **ObserverHandler** : class defined for a watchdog observer object to constantly 'watching' the indicated folder.
+- **Handler** : class defined for event handling of the files in the folder indicated.
