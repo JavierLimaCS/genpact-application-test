@@ -22,11 +22,4 @@ class ObserverHandler():
             self.observer.join()
 
 
-    def updateObserver(self, path):
-        self.observer.stop()
-        self.observer.join()
-        self.path = path
-        self.initializeObserver(self.ev)
-
-
 
