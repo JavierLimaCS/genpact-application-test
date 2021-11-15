@@ -54,11 +54,13 @@ class Main(QMainWindow):
         self.list = self.findChild(QListView, "listView")
         self.model = QtGui.QStandardItemModel()
         self.list.setModel(self.model)
-        self.model.appendRow(QStandardItem("Processed"))
+        self.model.appendRow(QStandardItem(QtGui.QIcon(
+                    './dir.png'),"Processed"))
         self.list2 = self.findChild(QListView, "listView2")
         self.model2 = QtGui.QStandardItemModel()
         self.list2.setModel(self.model2)
-        self.model2.appendRow(QStandardItem("Not Applicable"))
+        self.model2.appendRow(QStandardItem(QtGui.QIcon(
+                    './dir.png'),"Not Applicable"))
         self.worker = None
 
 
@@ -90,8 +92,10 @@ class Main(QMainWindow):
         folder2 = self.folderPath + '/Not_applicable'
         processedfiles = glob.glob(folder1 + "/*.*")
         notapplicablefiles = glob.glob(folder2 + "/*.*")
-        self.model.appendRow(QStandardItem("Processed"))
-        self.model2.appendRow(QStandardItem("Not Applicable"))
+        self.model.appendRow(QStandardItem(QtGui.QIcon(
+                    './dir.png'), "Processed"))
+        self.model2.appendRow(QStandardItem(QtGui.QIcon(
+                    './dir.png'), "Not Applicable"))
         for file in processedfiles:
             if '.xls' in file or '.xlsx' in file:
                 item = QtGui.QStandardItem(QtGui.QIcon(
