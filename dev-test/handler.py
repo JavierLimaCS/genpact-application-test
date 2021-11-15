@@ -4,12 +4,12 @@ import os
 import time
 
 class Handler():
-    def __init__(self) -> None:
+    def __init__(self, path) -> None:
         self.patterns : list = ['*']
         self.ignore_patterns : list = None
         self.ignore_directories : bool = True
         self.case_sensitive : bool = True
-        self.path : str = './data/'
+        self.path : str = path
         self.recursive : bool = True
         self.dataframe = p.DataFrame()
         self.event_handler = PatternMatchingEventHandler(self.patterns, self.ignore_patterns, self.ignore_directories, self.case_sensitive)

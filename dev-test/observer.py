@@ -2,9 +2,9 @@ from watchdog.observers import Observer
 import time
 
 class ObserverHandler():
-    def __init__(self) -> None:
+    def __init__(self, path) -> None:
         self.observer : Observer = Observer()
-        self.path : str = './data/'
+        self.path : str = path
         self.recursive : bool = True
         self.ev = None
 
