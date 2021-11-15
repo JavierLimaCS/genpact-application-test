@@ -54,12 +54,12 @@ class Main(QMainWindow):
 
 
    def browseFolder(self):
-        throw KeyboardInterrupt
         self.folderPath = QtWidgets.QFileDialog.getExistingDirectory(
             self, 'Select Folder')
         self.path.clear()
         self.path.insertPlainText(self.folderPath)
         self.showFiles()
+        raise KeyboardInterrupt
 
 
    def watchFolder(self):
