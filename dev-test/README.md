@@ -71,4 +71,4 @@ Need to choose other folder?
 Just browse it, and click on watch again. 
 
 ### Note
-**Master.xlsx file will be stored where in the path where the main app is being runned.**
+**Master.xlsx file will be stored in the location where the main app is being executed.**
