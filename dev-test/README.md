@@ -33,6 +33,7 @@ $ pip install 'packagename'
 - Version: 1.3.3
 - Summary: Powerful data structures for data analysis, time series, and statistics
 - Home-page: https://pandas.pydata.org
+
 ### Watchdog
 - Version: 2.1.6
 - Summary: Filesystem events monitoring
@@ -51,3 +52,23 @@ $ pip install 'packagename'
 - **Main** : class defined for setup app's UI. 
 - **ObserverHandler** : class defined for a watchdog observer object to constantly 'watching' the indicated folder.
 - **Handler** : class defined for event handling of the files in the folder indicated.
+
+## Run it
+
+To run the application, open a cmd on the path of main.py file, an run:
+```shell
+$ git clone https://github.com/JavierLimaCS/genpact-application-test test
+
+$ cd test/dev-test
+
+$ py main.py
+```
+
+Then choose a folder, and click on 'watch' to start the folder watcher.
+
+Need to choose other folder? 
+
+Just browse it, and click on watch again. 
+
+### Note
+**Master.xlsx file will be stored where in the path where the main app is being runned.* 
